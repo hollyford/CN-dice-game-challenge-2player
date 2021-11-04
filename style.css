@@ -8,6 +8,18 @@ body {
     color: white;
 }
 
+.winLose {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+#winLose {
+    font-size: 30px;
+    text-align: center;
+}
+
 .dice {
     display: flex;
     justify-content: center;
@@ -17,4 +29,32 @@ body {
     height:150px;
     width: 150px;
     border-radius: 15px;
+}
+.bttncontainer {
+    display: flex;
+    justify-content: center;
+
+}
+
+.buttons {
+    display: flex;
+    margin: 20px;
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+
+
+.players {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#playerOne, #playerTwo {
+    border: 1px solid black;
+    padding: 50px;
+    margin-top: 30px;
 }

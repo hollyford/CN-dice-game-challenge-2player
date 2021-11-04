@@ -17,9 +17,14 @@ const winLose = document.getElementById("winLose")
 
 scoreOne = 0;
 scoreTwo = 0;
-scoreOneP.textContent = scoreOne;
+scoreOneP.textContent = `Your Score: ${scoreOne}`;
+scoreTwoP.textContent = `Your Score: ${scoreTwo}`;
 bttnRollTwo.disabled = true;
 bttnHoldTwo.disabled = true;
+bttnRollOne.disabled = true;
+bttnHoldOne.disabled = true;
+playerOne.style.opacity = "0.5";
+playerTwo.style.opacity = "0.5";
 diceOne.setAttribute("src", "./images/placeholderDice.png");
 diceTwo.setAttribute("src", "./images/placeholderDice.png");
 
@@ -32,9 +37,12 @@ bttnReset.addEventListener("click", () => {
     bttnHoldOne.disabled = false;
     bttnRollTwo.disabled = true;
     bttnHoldTwo.disabled = true;
+    playerOne.style.opacity = "1";
+    playerTwo.style.opacity = "0.5";
     diceOne.setAttribute("src", "./images/placeholderDice.png");
     diceTwo.setAttribute("src", "./images/placeholderDice.png");
-    winLose.textContent = "Player 1's Turn"
+    winLose.textContent = "Player 1's Turn";
+    winLose.style.color = "#63109e ";
 })
 
 bttnHoldOne.addEventListener("click", () => {
@@ -42,6 +50,10 @@ bttnHoldOne.addEventListener("click", () => {
     bttnHoldTwo.disabled = false;
     bttnRollOne.disabled = true;
     bttnHoldOne.disabled = true;
+    playerOne.style.opacity = "0.5";
+    playerTwo.style.opacity = "1";
+    winLose.textContent = "Player 2's Turn";
+    winLose.style.color = "#bf6008";
 })
 
 bttnHoldTwo.addEventListener("click", () => {
@@ -49,6 +61,10 @@ bttnHoldTwo.addEventListener("click", () => {
     bttnHoldOne.disabled = false;
     bttnRollTwo.disabled = true;
     bttnHoldTwo.disabled = true;
+    playerTwo.style.opacity = "0.5";
+    playerOne.style.opacity = "1";
+    winLose.textContent = "Player 1's Turn";
+    winLose.style.color = "#63109e ";
 })
 
 bttnRollOne.addEventListener("click", () => {
@@ -58,10 +74,13 @@ bttnRollOne.addEventListener("click", () => {
         scoreOne = 0;
         scoreOneP.textContent = "Your Score: X";
         winLose.textContent = "Player 1 has rolled a 1 - Player 2's turn!"
+        winLose.style.color = "#bf6008";
         bttnRollTwo.disabled = false;
         bttnHoldTwo.disabled = false;
         bttnRollOne.disabled = true;
         bttnHoldOne.disabled = true;
+        playerOne.style.opacity = "0.5";
+        playerTwo.style.opacity = "1";
     } else if (num === 2) {
         diceOne.setAttribute("src", "./images/diceFace2.png");
         scoreOne += 2;
@@ -86,10 +105,13 @@ bttnRollOne.addEventListener("click", () => {
 
     if (scoreOne >= 21) {
         winLose.textContent = "Player 1 has won!"
+        winLose.style.color = "63109e ";
         bttnRollTwo.disabled = true;
         bttnHoldTwo.disabled = true;
         bttnRollOne.disabled = true;
         bttnHoldOne.disabled = true;
+        playerOne.style.opacity = "0.5";
+        playerTwo.style.opacity = "0.5";
     }
 })
 
@@ -99,11 +121,14 @@ bttnRollTwo.addEventListener("click", () => {
         diceTwo.setAttribute("src", "./images/diceFace1.png");
         scoreTwo = 0;
         scoreTwoP.textContent = "Your Score: X";
-        winLose.textContent = "Player 2 has rolled a 1 - Player 1's turn!"
+        winLose.textContent = "Player 2 has rolled a 1 - Player 1's turn!";
+        winLose.style.color = "#63109e";
         bttnRollOne.disabled = false;
         bttnHoldOne.disabled = false;
         bttnRollTwo.disabled = true;
         bttnHoldTwo.disabled = true;
+        playerOne.style.opacity = "1";
+        playerTwo.style.opacity = "0.5";
     } else if (num === 2) {
         diceTwo.setAttribute("src", "./images/diceFace2.png");
         scoreTwo += 2;
@@ -128,9 +153,12 @@ bttnRollTwo.addEventListener("click", () => {
 
     if (scoreTwo >= 21) {
         winLose.textContent = "Player 2 has won!"
+        winLose.style.color = "#bf6008";
         bttnRollTwo.disabled = true;
         bttnHoldTwo.disabled = true;
         bttnRollOne.disabled = true;
         bttnHoldOne.disabled = true;
+        playerOne.style.opacity = "0.5";
+        playerTwo.style.opacity = "0.5";
     }
 })

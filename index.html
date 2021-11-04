@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <title>Document</title>
+    <title>Two Player Dice Game</title>
 </head>
 <body>
-    <div>
+    <div class="mainText">
         <h1>Two Player Dice Game</h1>
-        <p>To win - roll the dice as many times as you want and the first player to have a score of 21 or more will be the winner!</p>
-        <p> If you want to hold your score, hit hold and the next player will take a turn</p>
-        <p>Be careful though: Roll a 1 and you lose...</p>
+        <p>Roll the dice as many times as you like - first player to score of 21 or more will win!</p>
+        <p>Hit hold if you want the other player to take a go - you can switch player as many times as you like...</p>
+        <p>...Be careful though: Roll a 1 and your score resets to 0!</p>
     </div>
-    <div>
-        <button id="bttnReset">Start A New Game</button>
+    <div class="bttncontainer">
+        <button class="buttons" id="bttnReset">START NEW GAME</button>
     </div>
-    <div>
+    <div class="winLose">
         <p id="winLose"></p>
     </div>
+    <section class="players">
     <div id="playerOne">
         <p>Player 1</p>
         <p id="scoreOneP"></p>
@@ -26,9 +27,9 @@
         <div class="dice">
             <img id="diceOne" src="" alt="">
         </div>
-        <div>
-            <button id="bttnRollOne">Roll</button>
-            <button id="bttnHoldOne">Hold</button>
+        <div class="bttncontainer">
+            <button class="buttons" id="bttnRollOne">ROLL</button>
+            <button class="buttons" id="bttnHoldOne">HOLD</button>
         </div>
     </div>
     </div>
@@ -40,12 +41,13 @@
         <div class="dice">
             <img id="diceTwo" src="" alt="">
         </div>
-        <div>
-            <button id="bttnRollTwo">Roll</button>
-            <button id="bttnHoldTwo">Hold</button>
+        <div  class="bttncontainer">
+            <button class="buttons" id="bttnRollTwo">ROLL</button>
+            <button class="buttons" id="bttnHoldTwo">HOLD</button>
         </div>
         </div>
     </div>
+</section>
 <script src="app.js"></script>
 </body>
 </html>
